@@ -1,29 +1,44 @@
 package demo;
 
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @RestController
 public class PrimeController {
-
+    //referenced from http://crunchify.com/write-java-program-to-print-fibonacci-series-upto-n-number/
 	
-	@RequestMapping("/{number}")
-	public String findAPrime(@PathVariable("number") int number) {
-        //referenced from http://crunchify.com/write-java-program-to-print-fibonacci-series-upto-n-number/
-
-		for(int i=1; i<=number; i++){
-            fibonacciRecusion(i);
-        }	 
-		
+	@RequestMapping("/small")
+	public String small() {
+        fibonacci(15);
 		return "done";
 	}
+
+    @RequestMapping("/medium")
+    public String medium() {
+        fibonacci(35);
+        return "done";
+    }
+
+    @RequestMapping("/large")
+    public String large() {
+        fibonacci(37);
+        return "done";
+    }
+
+    @RequestMapping("/xlarge")
+    public String xlarge() {
+        fibonacci(40);
+        return "done";
+    }
+
+    private void fibonacci(int number) {
+        for(int i=1; i<=number; i++){
+            fibonacciRecusion(i);
+        }
+    }
 	
-    public static int fibonacciRecusion(int number){
-        if(number == 1 || number == 2){
+    private int fibonacciRecusion(int number){
+        if (number == 1 || number == 2) {
             return 1;
         }
  

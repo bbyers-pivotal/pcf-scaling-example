@@ -4,5 +4,5 @@ applications:
   memory: 512M
   instances: 1
   host: scaleme
-  path: build/libs/prime-0.0.1-SNAPSHOT.jar
+  path: build/libs/scale-0.0.1-SNAPSHOT.jar
 
